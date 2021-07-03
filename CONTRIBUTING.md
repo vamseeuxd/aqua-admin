@@ -1,6 +1,6 @@
-# Contributing to aqa-management
+# Contributing to aqua-admin
 
-We would love for you to contribute to aqa-management and help make it ever better together! :rocket:
+We would love for you to contribute to aqua-admin and help make it ever better together! :rocket:
 
  - [Code of Conduct](#coc)
  - [Question or Problem?](#question)
@@ -11,11 +11,11 @@ We would love for you to contribute to aqa-management and help make it ever bett
  - [Commit Message Guidelines](#commit)
 
 ## <a name="coc"></a> Code of Conduct
-Help us keep aqa-management open and inclusive. Please read and follow our [Code of Conduct][coc].
+Help us keep aqua-admin open and inclusive. Please read and follow our [Code of Conduct][coc].
 
 ## <a name="question"></a> Got a Question or Problem?
 
-Please do not open issues for general support questions as we want to keep GitHub issues for bug reports and feature requests. You've got much better chances of getting your question answered on [StackOverflow][stackoverflow] where the questions should be tagged with tag `aqa-management`.
+Please do not open issues for general support questions as we want to keep GitHub issues for bug reports and feature requests. You've got much better chances of getting your question answered on [StackOverflow][stackoverflow] where the questions should be tagged with tag `aqua-admin`.
 
 StackOverflow is a much better place to ask questions since:
 
@@ -34,7 +34,7 @@ diagnose the problem. Screenshots and error stack traces are also helpful.
 
 Please follow this simple checklist before submitting:
 
-* If you have a question about using aqa-management, please ask on the [StackOverflow][stackoverflow].
+* If you have a question about using aqua-admin, please ask on the [StackOverflow][stackoverflow].
 
 * It is required that you clearly describe the steps necessary to reproduce the issue you are running into. Although we would love to help our users as much as possible, diagnosing issues without clear reproduction steps is extremely time-consuming and simply not sustainable.
 
@@ -96,7 +96,7 @@ Before you submit your Pull Request (PR) consider the following guidelines:
     git push my-fork my-fix-branch
     ```
 
-* In GitHub, send a pull request to `aqa-management:master`.
+* In GitHub, send a pull request to `aqua-admin:master`.
 * If we suggest changes then:
   * Make the required updates.
   * Re-run `npm run release:validate` to ensure tests are still passing, linter & build has no errors.
@@ -150,7 +150,7 @@ To ensure consistency throughout the source code, keep these rules in mind as yo
 
 We have very precise rules over how our git commit messages can be formatted.  This leads to **more
 readable messages** that are easy to follow when looking through the **project history**.  But also,
-we use the git commit messages to **generate the aqa-management change log**.
+we use the git commit messages to **generate the aqua-admin change log**.
 
 ### Commit Message Format
 Each commit message consists of a **header**, a **body** and a **footer**.  The header has a special
@@ -214,8 +214,8 @@ The rest of the commit message is then used for this.
 
 [coc]: CODE_OF_CONDUCT.md
 [dev-doc]: DEV_DOCS.md
-[github]: https://github.com/akveo/aqa-management
-[stackoverflow]: https://stackoverflow.com/questions/tagged/aqa-management
-[issues]: https://github.com/akveo/aqa-management/issues
-[new_issue]: https://github.com/akveo/aqa-management/issues/new
-[pulls]: https://github.com/akveo/aqa-management/pulls
+[github]: https://github.com/akveo/aqua-admin
+[stackoverflow]: https://stackoverflow.com/questions/tagged/aqua-admin
+[issues]: https://github.com/akveo/aqua-admin/issues
+[new_issue]: https://github.com/akveo/aqua-admin/issues/new
+[pulls]: https://github.com/akveo/aqua-admin/pulls

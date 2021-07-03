@@ -1,13 +1,13 @@
 {
-  "name": "aqa-management",
+  "name": "aqua-admin",
   "version": "7.0.0",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/akveo/aqa-management.git"
+    "url": "git+https://github.com/akveo/aqua-admin.git"
   },
   "bugs": {
-    "url": "https://github.com/akveo/aqa-management/issues"
+    "url": "https://github.com/akveo/aqua-admin/issues"
   },
   "scripts": {
     "ng": "ng",
@@ -18,7 +18,7 @@
     "test": "ng test",
     "test:coverage": "rimraf coverage && npm run test -- --code-coverage",
     "lint": "ng lint",
-    "lint:fix": "ng lint aqa-management-demo --fix",
+    "lint:fix": "ng lint aqua-admin-demo --fix",
     "lint:styles": "stylelint ./src/**/*.scss",
     "lint:ci": "npm run lint && npm run lint:styles",
     "pree2e": "webdriver-manager update --standalone false --gecko false",
@@ -36,6 +36,7 @@
     "@angular/common": "^12.1.0",
     "@angular/compiler": "^12.1.0",
     "@angular/core": "^12.1.0",
+    "@angular/fire": "^6.1.5",
     "@angular/forms": "^12.1.0",
     "@angular/google-maps": "^12.1.0",
     "@angular/platform-browser": "^12.1.0",
@@ -75,7 +76,8 @@
     "tslib": "^2.1.0",
     "typeface-exo": "0.0.22",
     "web-animations-js": "^2.3.2",
-    "zone.js": "~0.11.4"
+    "zone.js": "~0.11.4",
+    "firebase": "^7.0 || ^8.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~12.1.0",
@@ -107,6 +109,13 @@
     "ts-node": "3.2.2",
     "tslint": "~6.1.0",
     "tslint-language-service": "^0.9.9",
-    "typescript": "^4.2.3"
+    "typescript": "^4.2.3",
+    "@angular-devkit/architect": ">= 0.900 < 0.1300",
+    "firebase-tools": "^8.0.0 || ^9.0.0",
+    "fuzzy": "^0.1.3",
+    "inquirer": "^6.2.2",
+    "inquirer-autocomplete-prompt": "^1.0.1",
+    "open": "^7.0.3",
+    "jsonc-parser": "^3.0.0"
   }
 }

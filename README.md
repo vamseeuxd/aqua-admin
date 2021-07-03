@@ -1,28 +1,28 @@
-# aqa-management [<img src="https://i.imgur.com/oMcxwZ0.png" alt="Eva Design System" height="20px" />](https://eva.design?utm_campaign=eva_design%20-%20home%20-%20ngx_admin%20github%20readme&utm_source=ngx_admin&utm_medium=referral&utm_content=top_status_tile) [![Build Status](https://travis-ci.org/akveo/aqa-management.svg?branch=master)](https://travis-ci.org/akveo/aqa-management)
+# aqua-admin [<img src="https://i.imgur.com/oMcxwZ0.png" alt="Eva Design System" height="20px" />](https://eva.design?utm_campaign=eva_design%20-%20home%20-%20ngx_admin%20github%20readme&utm_source=ngx_admin&utm_medium=referral&utm_content=top_status_tile) [![Build Status](https://travis-ci.org/akveo/aqua-admin.svg?branch=master)](https://travis-ci.org/akveo/aqua-admin)
 
-[Who uses aqa-management?](https://github.com/akveo/aqa-management/issues/1645)| [Documentation](https://akveo.github.io/aqa-management?utm_campaign=ngx_admin%20-%20home%20-%20ngx_admin%20github%20readme&utm_source=ngx_admin&utm_medium=referral&utm_content=github_readme_documentation_link) | [Installation Guidelines](https://akveo.github.io/aqa-management/docs/getting-started/what-is-ngxadmin?utm_campaign=ngx_admin%20-%20home%20-%20ngx_admin%20github%20readme&utm_source=ngx_admin&utm_medium=referral&utm_content=github_readme_installation_guidelines) | [Angular templates](https://www.akveo.com/templates?utm_campaign=services%20-%20github%20-%20templates&utm_source=ngx_admin&utm_medium=referral&utm_content=github%20readme%20top%20angular%20templates%20link)
+[Who uses aqua-admin?](https://github.com/akveo/aqua-admin/issues/1645)| [Documentation](https://akveo.github.io/aqua-admin?utm_campaign=ngx_admin%20-%20home%20-%20ngx_admin%20github%20readme&utm_source=ngx_admin&utm_medium=referral&utm_content=github_readme_documentation_link) | [Installation Guidelines](https://akveo.github.io/aqua-admin/docs/getting-started/what-is-ngxadmin?utm_campaign=ngx_admin%20-%20home%20-%20ngx_admin%20github%20readme&utm_source=ngx_admin&utm_medium=referral&utm_content=github_readme_installation_guidelines) | [Angular templates](https://www.akveo.com/templates?utm_campaign=services%20-%20github%20-%20templates&utm_source=ngx_admin&utm_medium=referral&utm_content=github%20readme%20top%20angular%20templates%20link)
 
-# New! Material theme for aqa-management
+# New! Material theme for aqua-admin
 
-Material admin theme is based on the most popular Angular dashboard template - [aqa-management](https://akveo.github.io/aqa-management?utm_campaign=ngx_admin%20-%20home%20-%20ngx_admin%20github%20readme&utm_source=ngx_admin_material&utm_medium=referral&utm_content=github_readme)
+Material admin theme is based on the most popular Angular dashboard template - [aqua-admin](https://akveo.github.io/aqua-admin?utm_campaign=ngx_admin%20-%20home%20-%20ngx_admin%20github%20readme&utm_source=ngx_admin_material&utm_medium=referral&utm_content=github_readme)
 To use material theme checkout `feat/material-theme` branch.
 
-Get material aqa-management integrated with backend technology of your choice. [Check out our store](https://store.akveo.com/pages/all-collections?utm_campaign=akveo_store%20-%20all%20bundles%20-%20ngx_admin%20github%20readme&utm_source=ngx_admin&utm_medium=referral%20&utm_content=check_out_our_store).
+Get material aqua-admin integrated with backend technology of your choice. [Check out our store](https://store.akveo.com/pages/all-collections?utm_campaign=akveo_store%20-%20all%20bundles%20-%20ngx_admin%20github%20readme&utm_source=ngx_admin&utm_medium=referral%20&utm_content=check_out_our_store).
 
 ## Key features
 
 - The most popular and trusted Angular open source dashboard template is out there. Used by hundreds of thousands developers worldwide and Fortune 500 companies*.
-- Over 40+ Angular Components and 60+ Usage Examples. Kick off your project and save money by using aqa-management.
-- Already using aqa-management and willing to switch to material theme? Material theme is backward-compatible. Check out the article describing how to do that.
-- aqa-management material works perfectly with Angular Material and Nebular. Take the best from both!
+- Over 40+ Angular Components and 60+ Usage Examples. Kick off your project and save money by using aqua-admin.
+- Already using aqua-admin and willing to switch to material theme? Material theme is backward-compatible. Check out the article describing how to do that.
+- aqua-admin material works perfectly with Angular Material and Nebular. Take the best from both!
 
 ### To use material theme checkout `feat/material-theme` branch
 
 # Admin template based on Angular 10+ and <a href="https://github.com/akveo/nebular">Nebular</a>
-<a target="_blank" href="https://akveo.com/aqa-management/pages/dashboard?theme=corporate&utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20github%20readme&utm_source=ngx_admin&utm_medium=referral&utm_content=hero_banner_corporate"><img src="https://i.imgur.com/mFdqvgG.png"/></a>
+<a target="_blank" href="https://akveo.com/aqua-admin/pages/dashboard?theme=corporate&utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20github%20readme&utm_source=ngx_admin&utm_medium=referral&utm_content=hero_banner_corporate"><img src="https://i.imgur.com/mFdqvgG.png"/></a>
 
 ### Backend Integration Bundles
-Easy way to integrate aqa-management with any backend (PHP, .Net, .Net Core, Java etc. )
+Easy way to integrate aqua-admin with any backend (PHP, .Net, .Net Core, Java etc. )
 <a href="https://store.akveo.com/pages/all-collections?utm_campaign=akveo_store%20-%20all%20bundles%20-%20ngx_admin%20github%20readme&utm_source=ngx_admin&utm_medium=referral%20&utm_content=check_out_our_store"><img src="https://i.imgur.com/qbtASmP.png"></a>
 
 [Check out our Store](https://store.akveo.com/pages/all-collections?utm_campaign=akveo_store%20-%20all%20bundles%20-%20ngx_admin%20github%20readme&utm_source=ngx_admin&utm_medium=referral%20&utm_content=check_out_our_store) for ready to use Backend Bundles.
@@ -33,15 +33,15 @@ Easy way to integrate aqa-management with any backend (PHP, .Net, .Net Core, Jav
 
 ### With 6 stunning visual themes
 
-| <a target="_blank" href="https://www.akveo.com/aqa-management/pages/dashboard?theme=material-dark&utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20docs&utm_source=ngx_admin&utm_medium=referral&utm_content=ngx_admin_material_themes_material_dark"><img src="https://i.imgur.com/67YAlhf.png"/></a> | <a target="_blank" href="https://www.akveo.com/aqa-management/pages/dashboard?theme=material-light&utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20docs&utm_source=ngx_admin&utm_medium=referral&utm_content=ngx_admin_material_themes_material_light"><img src="https://i.imgur.com/aQzw0hD.png"/></a> |
+| <a target="_blank" href="https://www.akveo.com/aqua-admin/pages/dashboard?theme=material-dark&utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20docs&utm_source=ngx_admin&utm_medium=referral&utm_content=ngx_admin_material_themes_material_dark"><img src="https://i.imgur.com/67YAlhf.png"/></a> | <a target="_blank" href="https://www.akveo.com/aqua-admin/pages/dashboard?theme=material-light&utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20docs&utm_source=ngx_admin&utm_medium=referral&utm_content=ngx_admin_material_themes_material_light"><img src="https://i.imgur.com/aQzw0hD.png"/></a> |
 | --- | --- |
 |  Material Dark | Material Light |
 
-| <a target="_blank" href="https://www.akveo.com/aqa-management/pages/dashboard?theme=dark&utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20github%20readme&utm_source=ngx_admin&utm_medium=referral&utm_content=github_readme_theme_dark"><img src="https://i.imgur.com/9UkTGgr.png"/></a> | <a target="_blank" href="https://akveo.com/aqa-management/pages/dashboard?theme=default&utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20github%20readme&utm_source=ngx_admin&utm_medium=referral&utm_content=github_readme_theme_default"><img src="https://i.imgur.com/Kn3xDKQ.png"/></a> |
+| <a target="_blank" href="https://www.akveo.com/aqua-admin/pages/dashboard?theme=dark&utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20github%20readme&utm_source=ngx_admin&utm_medium=referral&utm_content=github_readme_theme_dark"><img src="https://i.imgur.com/9UkTGgr.png"/></a> | <a target="_blank" href="https://akveo.com/aqua-admin/pages/dashboard?theme=default&utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20github%20readme&utm_source=ngx_admin&utm_medium=referral&utm_content=github_readme_theme_default"><img src="https://i.imgur.com/Kn3xDKQ.png"/></a> |
 | --- | --- |
 |  Dark| Default |
 
-| <a target="_blank" href="https://www.akveo.com/aqa-management/pages/dashboard?theme=cosmic&utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20github%20readme&utm_source=ngx_admin&utm_medium=referral&utm_content=github_readme_theme_cosmic"><img src="https://i.imgur.com/iJu2YDF.png"/></a> | <a target="_blank" href="https://www.akveo.com/aqa-management/pages/dashboard?theme=corporate&utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20github%20readme&utm_source=ngx_admin&utm_medium=referral&utm_content=github_readme_theme_corporate"><img src="https://i.imgur.com/GpUt6NW.png"/></a> |
+| <a target="_blank" href="https://www.akveo.com/aqua-admin/pages/dashboard?theme=cosmic&utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20github%20readme&utm_source=ngx_admin&utm_medium=referral&utm_content=github_readme_theme_cosmic"><img src="https://i.imgur.com/iJu2YDF.png"/></a> | <a target="_blank" href="https://www.akveo.com/aqua-admin/pages/dashboard?theme=corporate&utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20github%20readme&utm_source=ngx_admin&utm_medium=referral&utm_content=github_readme_theme_corporate"><img src="https://i.imgur.com/GpUt6NW.png"/></a> |
 | --- | --- |
 | Cosmic  | Corporate |
 
@@ -59,13 +59,13 @@ Easy way to integrate aqa-management with any backend (PHP, .Net, .Net Core, Jav
 
 ### Demo
 
-<a target="_blank" href="http://www.akveo.com/aqa-management/?utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20github%20readme&utm_source=ngx_admin&utm_medium=referral&utm_content=live_demo_link">Live Demo</a>
+<a target="_blank" href="http://www.akveo.com/aqua-admin/?utm_campaign=ngx_admin%20-%20demo%20-%20ngx_admin%20github%20readme&utm_source=ngx_admin&utm_medium=referral&utm_content=live_demo_link">Live Demo</a>
 
 ## Documentation
 This template is using [Nebular](https://github.com/akveo/nebular) modules set, [here you can find documentation and other useful articles](https://akveo.github.io/nebular/docs/guides/install-based-on-starter-kit?utm_campaign=nebular%20-%20docs%20-%20ngx_admin%20github%20readme&utm_source=ngx_admin&utm_medium=referral&utm_content=documentation_useful_articles).
 
 ### Empty starter kit
-Don't need all the pages and modules and just looking for an empty starter kit for your next project? Check out our [starter-kit branch](https://github.com/akveo/aqa-management/tree/starter-kit).
+Don't need all the pages and modules and just looking for an empty starter kit for your next project? Check out our [starter-kit branch](https://github.com/akveo/aqua-admin/tree/starter-kit).
 
 ## BrowserStack
 This project runs its tests on multiple desktop and mobile browsers using [BrowserStack](http://www.browserstack.com).

@@ -1,9 +1,9 @@
 {
-  "name": "Aqua Management",
-  "short_name": "Aqua Management",
-  "description": "The importance of Aqua Management revolves around what it can do for your Agriculture. Its manages a number of Agriculture functions through streamlining and automating daily Agriculture operations. The software creates a leaner and accurate operation and provides a complete, 360 view into the ins and outs of your Agriculture. With the software, Agriculture are able to improve both former efficiency and productivity, becoming agile which improves Agriculture service.",
+  "name": "Aqua Admin",
+  "short_name": "Aqua Admin",
+  "description": "The importance of Aqua Admin revolves around what it can do for your Agriculture. Its manages a number of Agriculture functions through streamlining and automating daily Agriculture operations. The software creates a leaner and accurate operation and provides a complete, 360 view into the ins and outs of your Agriculture. With the software, Agriculture are able to improve both former efficiency and productivity, becoming agile which improves Agriculture service.",
   "scope": "./",
-  "start_url": "https://aqua-management.web.app/",
+  "start_url": "https://aqua-admin.web.app/",
   "display": "standalone",
   "theme_color": "#0286b7",
   "background_color": "#ffffff",

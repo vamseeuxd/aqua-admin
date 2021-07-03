@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   template: `
     <span class="created-by">
       <!-- Created with ♥ by <b><a href="https://akveo.page.link/8V2f" target="_blank">Akveo</a></b> 2019 -->
-      Aqua Management &copy; 2021
+      Aqua Admin &copy; 2021
     </span>
     <div class="socials">
       <a href="#" target="_blank" class="ion ion-social-github"></a>

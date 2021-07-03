@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "aqa-management-demo": {
+    "aqua-admin-demo": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -95,18 +95,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "aqa-management-demo:build"
+            "browserTarget": "aqua-admin-demo:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "aqa-management-demo:build:production"
+              "browserTarget": "aqua-admin-demo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "aqa-management-demo:build"
+            "browserTarget": "aqua-admin-demo:build"
           }
         },
         "test": {
@@ -161,10 +161,14 @@
             "typeCheck": true,
             "exclude": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     },
-    "aqa-management-demo-e2e": {
+    "aqua-admin-demo-e2e": {
       "root": "",
       "sourceRoot": "",
       "projectType": "application",
@@ -173,7 +177,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "aqa-management-demo:serve"
+            "devServerTarget": "aqua-admin-demo:serve"
           }
         },
         "lint": {
@@ -188,7 +192,7 @@
       }
     }
   },
-  "defaultProject": "aqa-management-demo",
+  "defaultProject": "aqua-admin-demo",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "ngx",

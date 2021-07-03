@@ -1,5 +1,14 @@
 {
   "projects": {
-    "default": "aqua-management"
+    "default": "aq-admin"
+  },
+  "targets": {
+    "aq-admin": {
+      "hosting": {
+        "aqua-admin-demo": [
+          "aq-admin"
+        ]
+      }
+    }
   }
 }
