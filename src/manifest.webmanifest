@@ -1,0 +1,84 @@
+{
+  "name": "Aqua Management",
+  "short_name": "Aqua Management",
+  "description": "The importance of Aqua Management revolves around what it can do for your Agriculture. Its manages a number of Agriculture functions through streamlining and automating daily Agriculture operations. The software creates a leaner and accurate operation and provides a complete, 360 view into the ins and outs of your Agriculture. With the software, Agriculture are able to improve both former efficiency and productivity, becoming agile which improves Agriculture service.",
+  "scope": "./",
+  "start_url": "https://aqua-management.web.app/",
+  "display": "standalone",
+  "theme_color": "#0286b7",
+  "background_color": "#ffffff",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "assets/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Manage Daily Activities",
+      "short_name": "Daily Activities",
+      "description": "Manage Daily Activities",
+      "url": "./",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Manage Notification",
+      "short_name": "Manage Notification",
+      "description": "Manage Notification",
+      "url": "./",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/icons/localhost_4200_.png",
+      "sizes": "1280x720",
+      "type": "image/png"
+    }
+  ]
+}

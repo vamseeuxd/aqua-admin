@@ -1,0 +1,50 @@
+<div class="row">
+  <h4 class="col-12 mb-0 text-truncate border-bottom mb-3 pb-3">Antervedi - Tank No - 4</h4>
+</div>
+<div class="row">
+  <h6 class="text-muted border-bottom pb-2 mt-2 mb-3 col-12 text-truncate">Realtime Water Parameters</h6>
+  <div class="col-xxxl-6 col-md-6" *ngFor="let statusCard of statusCards">
+    <ngx-status-card [value]="statusCard.value" [subTitle]="statusCard.subTitle" [title]="statusCard.title" [type]="statusCard.type">
+      <i [ngClass]="statusCard.iconClass"></i>
+    </ngx-status-card>
+  </div>
+</div>
+
+<div class="row">
+  <!-- <div class="col-xxxl-3 col-xxl-4 col-lg-5 col-md-6">
+    <ngx-temperature></ngx-temperature>
+  </div> -->
+
+  <h6 class="text-muted border-bottom pb-2 mt-2 mb-3 col-12 text-truncate">Realtime Power Consumption</h6>
+
+  <div class="col-12">
+    <ngx-electricity></ngx-electricity>
+  </div>
+</div>
+
+<div class="row">
+  <!-- <div class="col-xxxl-9 col-xl-12">
+    <ngx-rooms></ngx-rooms>
+  </div> -->
+
+  <!-- <div class="col-xxxl-3 col-xxl-4 col-lg-7 col-md-6">
+    <ngx-contacts></ngx-contacts>
+  </div> -->
+
+  <div class="col-md-6">
+    <ngx-solar [chartValue]="solarValue"></ngx-solar>
+    <ngx-traffic></ngx-traffic>
+  </div>
+
+  <div class="col-md-6">
+    <h6 class="text-muted border-bottom pb-2 mt-2 mb-3 col-12 text-truncate">Weather report from 3rd Party</h6>
+    <ngx-weather></ngx-weather>
+    <!-- <ngx-kitten></ngx-kitten> -->
+  </div>
+
+  <!-- <div class="col-xxxl-6 col-xxl-12 col-md-7"> -->
+  <div class="col-12">
+    <h6 class="text-muted border-bottom pb-2 mt-2 mb-3 col-12 text-truncate">Securities</h6>
+    <ngx-security-cameras></ngx-security-cameras>
+  </div>
+</div>
