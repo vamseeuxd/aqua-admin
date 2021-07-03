@@ -1,4 +1,4 @@
-import { ChartsModule } from './../charts/charts.module';
+import { ChartsModule } from '../charts/charts.module';
 import { NgModule } from '@angular/core';
 import {
   NbActionsModule,
@@ -9,7 +9,7 @@ import {
   NbRadioModule,
   NbSelectModule,
   NbListModule,
-  NbIconModule,
+  NbIconModule, NbAccordionModule, NbCheckboxModule, NbInputModule,
 } from '@nebular/theme';
 import { NgxEchartsModule } from 'ngx-echarts';
 
@@ -33,6 +33,9 @@ import { FormsModule } from '@angular/forms';
     NbButtonModule,
     NgxEchartsModule,
     ChartsModule,
+    NbAccordionModule,
+    NbCheckboxModule,
+    NbInputModule,
   ],
   declarations: [
     ManageProjectsComponent,

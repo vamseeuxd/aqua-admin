@@ -1,1 +1,55 @@
-<h4>Manage Projects</h4>
+<div class="row">
+
+  <h4 class="d-flex justify-content-between col-12 mb-0 text-truncate border-bottom mb-3 pb-3">
+    Manage Projects
+  </h4>
+
+</div>
+
+<div class="accordion-container col-md-12 offset-lg-3 offset-xxxl-3 col-lg-6 col-xxxl-6">
+  <nb-accordion multi *ngIf="projects.length > 0">
+     <nb-accordion-item *ngFor="let i of projects">
+      <nb-accordion-item-header>
+        <h6 class="m-0 p-0">
+          {{i.name}}
+          <p class="m-0 p-0">{{i.address}}</p>
+        </h6>
+      </nb-accordion-item-header>
+      <nb-accordion-item-body>
+
+      </nb-accordion-item-body>
+    </nb-accordion-item>
+  </nb-accordion>
+  <h5 *ngIf="projects.length == 0;" class="text-warning text-center">No projects to show</h5>
+
+</div>
+
+
+<button (click)="openDialog(addProjectTemplateRef)" class="btn shadow btn-primary ml-auto rounded-circle add-project-button">
+  <i class="fa fa-plus"></i>
+</button>
+
+
+<ng-template #addProjectTemplateRef let-data let-ref="dialogRef">
+  <nb-card>
+    <nb-card-header>Add New Project</nb-card-header>
+    <nb-card-body>
+      <form #addProjectForm="ngForm" (submit)="addItem(addProjectForm, ref)">
+        <div class="form-group">
+          <label class="label">Project Name</label>
+          <input name="name" ngModel autofocus type="text" nbInput fullWidth placeholder="Project Name">
+        </div>
+        <div class="form-group">
+          <label class="label">Address</label>
+          <textarea name="address" ngModel nbInput fullWidth placeholder="Address"></textarea>
+        </div>
+        <button type="submit" nbButton status="danger">Submit</button>
+      </form>
+
+    </nb-card-body>
+  </nb-card>
+</ng-template>
+
+<!--
+ng g c pages/manage-projects/ProjectList
+-->

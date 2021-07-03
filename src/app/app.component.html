@@ -1,1 +1,11 @@
 <router-outlet></router-outlet>
+
+<div *ngIf="busyIndicator.isBusyIndicator()"
+     class="spinner" style="background-color: rgba(0,0,0,0.2)">
+  <div class="blob blob-0"></div>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="blob blob-4"></div>
+  <div class="blob blob-5"></div>
+</div>

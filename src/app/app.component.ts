@@ -1,18 +1,21 @@
-import { Component, OnInit } from "@angular/core";
-import { AnalyticsService } from "./@core/utils/analytics.service";
-import { SeoService } from "./@core/utils/seo.service";
-import { SwUpdate } from "@angular/service-worker";
+import {Component, OnInit} from '@angular/core';
+import {AnalyticsService} from './@core/utils';
+import {SeoService} from './@core/utils';
+import {SwUpdate} from '@angular/service-worker';
+import {BusyIndicatorService} from './services/busy-indicator/busy-indicator.service';
 
 @Component({
-  selector: "ngx-app",
-  templateUrl: "./app.component.html",
+  selector: 'ngx-app',
+  templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {
   constructor(
     private analytics: AnalyticsService,
     private swUpdate: SwUpdate,
-    private seoService: SeoService
-  ) {}
+    public busyIndicator: BusyIndicatorService,
+    private seoService: SeoService,
+  ) {
+  }
 
   async updateSoftware() {
     await this.swUpdate.activateUpdate();

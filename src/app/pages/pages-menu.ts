@@ -1,6 +1,6 @@
 import { NbMenuItem } from '@nebular/theme';
 
-const hidden = true;
+const hidden = false;
 
 export const MENU_ITEMS: NbMenuItem[] = [
   {
