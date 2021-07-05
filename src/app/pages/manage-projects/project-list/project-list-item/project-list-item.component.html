@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-12 h6 mb-0">
+    <button ghost
+            nbButton
+            status="primary"
+            nbPopoverPlacement="right"
+            [nbPopoverContext]="project"
+            [nbPopover]="actionsPopover">
+      <i class="fa fa-ellipsis-v"></i>
+    </button>
+    {{project.name}}
+  </div>
+  <div class="col-12 p">{{project.address}}</div>
+</div>
+
+<ng-template #actionsPopover let-data>
+  <nb-list>
+    <nb-list-item role="button" class="text-left" nbButton><div class="w-100"><i class="fa fa-list mr-2"></i>  Manage Ponds</div></nb-list-item>
+    <nb-list-item (click)="deleteProject.emit(data);popover.hide()" role="button" class="text-left" nbButton><div class="w-100"><i class="fa fa-trash mr-2"></i>  Delete</div></nb-list-item>
+    <nb-list-item role="button" class="text-left" nbButton><div class="w-100"><i class="fa fa-edit mr-2"></i>  Edit</div></nb-list-item>
+  </nb-list>
+</ng-template>

@@ -9,13 +9,16 @@ import {
   NbRadioModule,
   NbSelectModule,
   NbListModule,
-  NbIconModule, NbAccordionModule, NbCheckboxModule, NbInputModule,
+  NbIconModule, NbAccordionModule, NbCheckboxModule, NbInputModule, NbPopoverModule, NbBadgeModule,
 } from '@nebular/theme';
 import { NgxEchartsModule } from 'ngx-echarts';
 
 import { ThemeModule } from '../../@theme/theme.module';
 import { ManageProjectsComponent } from './manage-projects.component';
 import { FormsModule } from '@angular/forms';
+import { ProjectListComponent } from './project-list/project-list.component';
+import { PondsListComponent } from './ponds-list/ponds-list.component';
+import { ProjectListItemComponent } from './project-list/project-list-item/project-list-item.component';
 
 @NgModule({
   imports: [
@@ -36,9 +39,14 @@ import { FormsModule } from '@angular/forms';
     NbAccordionModule,
     NbCheckboxModule,
     NbInputModule,
+    NbPopoverModule,
+    NbBadgeModule,
   ],
   declarations: [
     ManageProjectsComponent,
+    ProjectListComponent,
+    PondsListComponent,
+    ProjectListItemComponent,
   ],
 })
 export class ManageProjectsModule { }

@@ -10,6 +10,7 @@
 
 export const environment = {
   production: false,
+  hideMenu: false,
 };
 
 export const firebaseConfig = {

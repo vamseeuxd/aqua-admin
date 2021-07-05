@@ -1,6 +1,7 @@
 import { NbMenuItem } from '@nebular/theme';
+import {environment} from '../../environments/environment';
 
-const hidden = false;
+const hidden = environment.hideMenu;
 
 export const MENU_ITEMS: NbMenuItem[] = [
   {

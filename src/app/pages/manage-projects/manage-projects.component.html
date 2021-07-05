@@ -1,28 +1,12 @@
 <div class="row">
 
-  <h4 class="d-flex justify-content-between col-12 mb-0 text-truncate border-bottom mb-3 pb-3">
+  <h6 class="text-muted d-flex justify-content-between col-12 mb-0 text-truncate border-bottom mb-2 pb-2">
     Manage Projects
-  </h4>
+  </h6>
 
 </div>
 
-<div class="accordion-container col-md-12 offset-lg-3 offset-xxxl-3 col-lg-6 col-xxxl-6">
-  <nb-accordion multi *ngIf="projects.length > 0">
-     <nb-accordion-item *ngFor="let i of projects">
-      <nb-accordion-item-header>
-        <h6 class="m-0 p-0">
-          {{i.name}}
-          <p class="m-0 p-0">{{i.address}}</p>
-        </h6>
-      </nb-accordion-item-header>
-      <nb-accordion-item-body>
-
-      </nb-accordion-item-body>
-    </nb-accordion-item>
-  </nb-accordion>
-  <h5 *ngIf="projects.length == 0;" class="text-warning text-center">No projects to show</h5>
-
-</div>
+<ngx-project-list (deleteProject)="deleteItem($event)" [projects]="projects"></ngx-project-list>
 
 
 <button (click)="openDialog(addProjectTemplateRef)" class="btn shadow btn-primary ml-auto rounded-circle add-project-button">
@@ -34,7 +18,7 @@
   <nb-card>
     <nb-card-header>Add New Project</nb-card-header>
     <nb-card-body>
-      <form #addProjectForm="ngForm" (submit)="addItem(addProjectForm, ref)">
+      <form #addProjectForm="ngForm" autocomplete="off" (submit)="addItem(addProjectForm, ref)">
         <div class="form-group">
           <label class="label">Project Name</label>
           <input name="name" ngModel autofocus type="text" nbInput fullWidth placeholder="Project Name">
@@ -43,7 +27,13 @@
           <label class="label">Address</label>
           <textarea name="address" ngModel nbInput fullWidth placeholder="Address"></textarea>
         </div>
-        <button type="submit" nbButton status="danger">Submit</button>
+        <!--<button type="submit" nbButton status="danger">Add</button>-->
+        <div class="w-100 d-flex justify-content-between">
+          <button type="submit" nbButton status="primary">Add</button>
+          <button type="button" class="ml-2" (click)="addProjectForm.resetForm({});ref.close();" nbButton status="basic">
+            Close
+          </button>
+        </div>
       </form>
 
     </nb-card-body>
@@ -51,5 +41,5 @@
 </ng-template>
 
 <!--
-ng g c pages/manage-projects/ProjectList
+ng g c pages/manage-projects/PondsList
 -->
