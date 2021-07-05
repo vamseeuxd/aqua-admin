@@ -25,8 +25,10 @@ import { FormsModule } from '@angular/forms';
 import { ProjectListComponent } from './project-list/project-list.component';
 import { PondsListComponent } from './ponds-list/ponds-list.component';
 import { ProjectListItemComponent } from './project-list/project-list-item/project-list-item.component';
-import {RouterModule} from "@angular/router";
+import {RouterModule} from '@angular/router';
 import { PondsListItemComponent } from './ponds-list/ponds-list-item/ponds-list-item.component';
+import { SensorsListComponent } from './sensors-list/sensors-list.component';
+import { SensorsListItemComponent } from './sensors-list/sensors-list-item/sensors-list-item.component';
 
 @NgModule({
     imports: [
@@ -58,6 +60,8 @@ import { PondsListItemComponent } from './ponds-list/ponds-list-item/ponds-list-
     PondsListComponent,
     ProjectListItemComponent,
     PondsListItemComponent,
+    SensorsListComponent,
+    SensorsListItemComponent,
   ],
 })
 export class ManageProjectsModule { }

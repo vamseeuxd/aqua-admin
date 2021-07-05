@@ -7,6 +7,7 @@ import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 import {ManageProjectsComponent} from './manage-projects/manage-projects.component';
 import {PondsListComponent} from './manage-projects/ponds-list/ponds-list.component';
+import {SensorsListComponent} from './manage-projects/sensors-list/sensors-list.component';
 
 const routes: Routes = [{
   path: '',
@@ -27,6 +28,10 @@ const routes: Routes = [{
     {
       path: 'manage-ponds/:projectID',
       component: PondsListComponent,
+    },
+    {
+      path: 'manage-sensors/:projectID/:pondID',
+      component: SensorsListComponent,
     },
     {
       path: 'layout',

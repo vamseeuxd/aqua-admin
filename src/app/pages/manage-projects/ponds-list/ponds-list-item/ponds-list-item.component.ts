@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {NbPopoverDirective} from '@nebular/theme';
 import {Pond} from '../../project-list/project-list.component';
+import {Project} from '../../manage-projects.component';
 
 @Component({
   selector: 'ngx-ponds-list-item',
@@ -10,6 +11,7 @@ import {Pond} from '../../project-list/project-list.component';
 export class PondsListItemComponent implements OnInit {
 
   @Input() pond: Pond;
+  @Input() project: Project;
   @Output() deletePond: EventEmitter<Pond> = new EventEmitter<Pond>();
   @Output() editPond: EventEmitter<Pond> = new EventEmitter<Pond>();
   @ViewChild(NbPopoverDirective) popover: NbPopoverDirective;

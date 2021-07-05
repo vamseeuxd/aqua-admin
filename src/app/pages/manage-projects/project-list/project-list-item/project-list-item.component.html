@@ -15,7 +15,7 @@
 
 <ng-template #actionsPopover let-data>
   <nb-list>
-    <nb-list-item [routerLink]="'../manage-ponds/'+project.id" role="button" class="text-left" nbButton><div class="w-100"><i class="fa fa-list mr-2"></i>  Manage Ponds in  Project</div></nb-list-item>
+    <nb-list-item [routerLink]="'../manage-ponds/'+project.id" role="button" class="text-left" nbButton><div class="w-100"><i class="fa fa-list mr-2"></i>  Manage Ponds in Project</div></nb-list-item>
     <nb-list-item (click)="deleteProject.emit(data);popover.hide()" role="button" class="text-left" nbButton><div class="w-100"><i class="fa fa-trash mr-2"></i>  Delete Project</div></nb-list-item>
     <nb-list-item (click)="editProject.emit(data);popover.hide()" role="button" class="text-left" nbButton><div class="w-100"><i class="fa fa-edit mr-2"></i>  Edit Project</div></nb-list-item>
   </nb-list>

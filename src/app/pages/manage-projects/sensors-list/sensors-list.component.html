@@ -1,6 +1,10 @@
-<nav aria-label="breadcrumb" *ngIf="project">
+<nav aria-label="breadcrumb" *ngIf="pond && project">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item active text-muted" aria-current="page">Manage Ponds in <code>{{project.name}}</code></li>
+    <li class="breadcrumb-item active text-muted" aria-current="page">
+      Manage Sensors in
+      <code>{{pond.name}}</code> in
+      <code>{{project.name}}</code>
+    </li>
   </ol>
 </nav>
 <a class="btn btn-link float-right" routerLink="/pages/manage-projects"><i class="fa fa-caret-left mr-2"></i>Back to
@@ -8,16 +12,17 @@
 <div class="clearfix"></div>
 <nb-card class="list-card mb-1">
   <nb-card-body class="p-0">
-    <nb-list *ngIf="ponds.length > 0">
-      <nb-list-item *ngFor="let pond of ponds">
-        <ngx-ponds-list-item [project]="project" [pond]="pond" (deletePond)="deleteItem($event)" (editPond)="openDialog(addPondTemplateRef, $event)"></ngx-ponds-list-item>
+    <nb-list *ngIf="sensors.length > 0">
+      <nb-list-item *ngFor="let sensor of sensors">
+        <ngx-sensors-list-item [sensor]="sensor" (deleteSensor)="deleteSensor($event)"
+                               (editSensor)="openDialog(addSensorTemplateRef, $event)"></ngx-sensors-list-item>
       </nb-list-item>
     </nb-list>
   </nb-card-body>
 </nb-card>
 <div *ngIf="false" class="accordion-container col-12 p-0">
-  <nb-accordion multi *ngIf="ponds.length > 0">
-    <nb-accordion-item class="w-100 shadow-sm border mb-2" *ngFor="let i of ponds">
+  <nb-accordion multi *ngIf="sensors.length > 0">
+    <nb-accordion-item class="w-100 shadow-sm border mb-2" *ngFor="let i of sensors">
       <nb-accordion-item-header>
         <button ghost
                 nbButton
@@ -83,34 +88,35 @@
       </nb-accordion-item-body>
     </nb-accordion-item>
   </nb-accordion>
-  <h5 *ngIf="ponds.length == 0;" class="text-warning text-center">No Ponds to show</h5>
+  <h5 *ngIf="sensors.length == 0;" class="text-warning text-center">No Ponds to show</h5>
 </div>
 
-<a *ngIf="ponds.length != 0;" class="btn btn-link float-right" routerLink="/pages/manage-projects"><i
+<a *ngIf="sensors.length != 0;" class="btn btn-link float-right" routerLink="/pages/manage-projects"><i
   class="fa fa-caret-left mr-2"></i>Back to Manage Projects</a>
-<div *ngIf="ponds.length != 0;" class="clearfix"></div>
+<div *ngIf="sensors.length != 0;" class="clearfix"></div>
 
-<button (click)="openDialog(addPondTemplateRef)"
+<button (click)="openDialog(addSensorTemplateRef)"
         class="btn shadow btn-primary ml-auto rounded-circle add-project-button">
   <i class="fa fa-plus"></i>
 </button>
 
-<ng-template #addPondTemplateRef let-data let-ref="dialogRef">
+<ng-template #addSensorTemplateRef let-data let-ref="dialogRef">
   <nb-card>
-    <nb-card-header *ngIf="!data">Add New Pond</nb-card-header>
-    <nb-card-header *ngIf="data">Edit Pond ({{data.name}})</nb-card-header>
+    <nb-card-header *ngIf="!data">Add New Sensor</nb-card-header>
+    <nb-card-header *ngIf="data">Edit Sensor ({{data.name}})</nb-card-header>
     <nb-card-body>
-      <form #addPondForm="ngForm" autocomplete="off" (submit)="addItem(addPondForm, ref, data)">
+      <form #addSensorForm="ngForm" autocomplete="off" (submit)="addItem(addSensorForm, ref, data)">
         <input type="hidden" name="projectId" [ngModel]="project?.id">
+        <input type="hidden" name="pondId" [ngModel]="pond?.id">
         <div class="form-group">
-          <label class="label">Pond Name</label>
-          <input name="name" [ngModel]="data?.name" autofocus type="text" nbInput fullWidth placeholder="Pond Name">
+          <label class="label">Sensor Name</label>
+          <input name="name" [ngModel]="data?.name" autofocus type="text" nbInput fullWidth placeholder="Sensor Name">
         </div>
         <div class="w-100 d-flex justify-content-between">
           <button type="submit" nbButton status="primary">
             {{data ? 'Update' : 'Create'}}
           </button>
-          <button type="button" class="ml-2" (click)="addPondForm.resetForm({});ref.close();" nbButton status="basic">
+          <button type="button" class="ml-2" (click)="addSensorForm.resetForm({});ref.close();" nbButton status="basic">
             Close
           </button>
         </div>
