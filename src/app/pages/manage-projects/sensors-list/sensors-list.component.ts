@@ -14,6 +14,9 @@ export interface Sensor {
   id?: string;
   deleted?: boolean;
   name: string;
+  priority?: number;
+  type?: string;
+  tableName?: string;
 }
 
 @Component({
@@ -32,7 +35,7 @@ export class SensorsListComponent implements OnInit {
         return this.afs.collection<Sensor>('sensors', ref => {
           return ref.where('pondId', '==', pondID)
             .where('deleted', '==', false)
-            .orderBy('createdOn', 'desc');
+            .orderBy('priority', 'asc');
         }).valueChanges({idField: 'id'});
       } else {
         return EMPTY;
@@ -40,6 +43,8 @@ export class SensorsListComponent implements OnInit {
     }),
   );
   sensors: Sensor[] = [];
+  sensorsGroupByTypes: any = {};
+  sensorTypes: { id: string, name: string }[] = [];
   private pondIDSubscription: Subscription;
   private pondSubscription: Subscription;
   private projectSubscription: Subscription;
@@ -70,9 +75,29 @@ export class SensorsListComponent implements OnInit {
     public busyIndicator: BusyIndicatorService,
   ) {
     this.sensorsCollection = this.afs.collection<Sensor>('sensors');
+    const busyID_3 = this.busyIndicator.show();
+    this.afs.collection<{ id: string; name: string }>(
+      'sensorsTypes',
+      ref => {
+        return ref.orderBy('priority', 'asc');
+      },
+    )
+      .valueChanges({idField: 'id'}).subscribe(value => {
+      this.sensorTypes = value;
+      this.busyIndicator.hide(busyID_3);
+    });
     const busyID_0 = this.busyIndicator.show();
     this.pondIDSubscription = this.sensors$.subscribe(value => {
       this.sensors = value;
+      const groupBy = (xs, key) => {
+        return xs.reduce(function (rv, x) {
+          (rv[x[key]] = rv[x[key]] || []).push(x);
+          return rv;
+        }, {});
+      };
+      /*console.clear();
+      console.log(groupBy(value, 'type'));*/
+      this.sensorsGroupByTypes = groupBy(value, 'type');
       this.busyIndicator.hide(busyID_0);
     });
     const busyID_1 = this.busyIndicator.show();
@@ -135,6 +160,16 @@ export class SensorsListComponent implements OnInit {
         closeOnBackdropClick: false,
         autoFocus: true,
       });
+  }
+
+  toCamelCase(string: string) {
+    if (string && string.trim().length) {
+      return string.replace(/\s+(.)/g, function (match, group) {
+        return group.toUpperCase();
+      });
+    } else {
+      return '';
+    }
   }
 
 }

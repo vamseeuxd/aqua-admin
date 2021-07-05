@@ -1,21 +1,67 @@
-<div class="row">
-  <div class="col-12 h6 mb-0">
-    <button ghost
-            nbButton
-            status="primary"
-            nbPopoverPlacement="right"
-            [nbPopoverContext]="sensor"
-            [nbPopover]="actionsPopover">
-      <i class="fa fa-ellipsis-v"></i>
-    </button>
-    {{sensor.name}}
-  </div>
-</div>
+<nb-accordion>
+  <nb-accordion-item class="w-100 m-0">
+    <nb-accordion-item-header>{{sensor.name}}</nb-accordion-item-header>
+    <nb-accordion-item-body>
+      <!--<pre>{{sensor|json}}</pre>-->
+      <nb-list class="w-100 mb-4">
+        <nb-list-item class="shadow-sm mb-2" *ngFor="let sen of sensors">
+          <div class="w-100 d-flex flex-column">
+            <p class="m-0">{{sensor.name}} Device ID : {{ sen.sensorId }}</p>
+            <p class="m-0">Warranty From : {{sen?.warrantyFrom|date:'MMMM-dd-yyyy'}}</p>
+            <p class="m-0">Warranty To : {{sen?.warrantyTo|date:'MMMM-dd-yyyy'}}</p>
+            <div class="w-100 d-flex flex-column flex-md-row">
+              <button size="small" (click)="deleteSensor(sen)" nbButton class="mb-1 mr-2 mt-2" status="danger"><nb-icon icon="trash"></nb-icon> Delete</button>
+              <button size="small" nbButton status="info" class="mb-1 mr-2 mt-2"><nb-icon icon="edit"></nb-icon> Edit</button>
+              <button size="small" (click)="createServiceRequest()" nbButton status="warning" class="mb-1 mr-2 mt-2"><nb-icon icon="question-mark-circle-outline"></nb-icon> Create a Service Request</button>
+            </div>
+          </div>
 
-<ng-template #actionsPopover let-data>
-  <nb-list>
-    <nb-list-item [routerLink]="'/pages/manage-sensors/'+sensor.id" role="button" class="text-left" nbButton><div class="w-100"><i class="fa fa-list mr-2"></i>  Manage Sensors in  Pond</div></nb-list-item>
-    <nb-list-item (click)="deleteSensor.emit(data);popover.hide()" role="button" class="text-left" nbButton><div class="w-100"><i class="fa fa-trash mr-2"></i>  Delete Pond</div></nb-list-item>
-    <nb-list-item (click)="editSensor.emit(data);popover.hide()" role="button" class="text-left" nbButton><div class="w-100"><i class="fa fa-edit mr-2"></i>  Edit Pond</div></nb-list-item>
-  </nb-list>
+          <!--<div class="ml-auto">
+            <button (click)="deleteSensor(sen)" nbButton class="mr-3" status="danger">
+              <nb-icon icon="trash"></nb-icon>
+            </button>
+            <button nbButton status="info">
+              <nb-icon icon="edit"></nb-icon>
+            </button>
+          </div>-->
+        </nb-list-item>
+      </nb-list>
+      <!--<pre>{{sensors|json}}</pre>-->
+      <button class="float-right mt-2 mr-2" (click)="openDialog(addSensorTemplateRef)" nbButton status="primary">Add New "{{sensor.name}}" Sensor</button>
+      <button class="float-right mt-2 mr-2" nbButton status="info">Order for "{{sensor.name}}" Sensor</button>
+      <div class="clearfix"></div>
+    </nb-accordion-item-body>
+  </nb-accordion-item>
+</nb-accordion>
+
+
+<ng-template #addSensorTemplateRef let-data let-ref="dialogRef">
+  <nb-card>
+    <nb-card-header *ngIf="!data">Add New "{{sensor.name}}" Sensor</nb-card-header>
+    <nb-card-header *ngIf="data">Edit "{{sensor.name}}" Sensor ({{data.name}})</nb-card-header>
+    <nb-card-body>
+      <form #addSensorForm="ngForm" autocomplete="off" (submit)="addItem(addSensorForm, ref, data)">
+        <input type="hidden" name="projectId" [ngModel]="projectID">
+        <input type="hidden" name="pondId" [ngModel]="pondID">
+        <!--<div class="form-group">
+          <label class="label">Sensor Name</label>
+          <input name="name" [ngModel]="data?.name" autofocus type="text" nbInput fullWidth placeholder="Sensor Name">
+        </div>-->
+        <div class="form-group">
+          <label class="label">Sensor ID which is on purchased device</label>
+          <input name="sensorId" [ngModel]="data?.sensorId"
+                 autofocus type="text" nbInput fullWidth placeholder="Sensor ID which is on purchased device">
+        </div>
+        <div class="w-100 d-flex justify-content-between">
+          <button type="submit" nbButton status="primary">
+            {{data ? 'Update' : 'Add'}}
+          </button>
+          <button type="button" class="ml-2" (click)="addSensorForm.resetForm({});ref.close();" nbButton status="basic">
+            Close
+          </button>
+        </div>
+      </form>
+
+    </nb-card-body>
+  </nb-card>
 </ng-template>

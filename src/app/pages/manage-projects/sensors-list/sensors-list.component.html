@@ -7,96 +7,22 @@
     </li>
   </ol>
 </nav>
-<a class="btn btn-link float-right" routerLink="/pages/manage-projects"><i class="fa fa-caret-left mr-2"></i>Back to
-  Manage Projects</a>
-<div class="clearfix"></div>
-<nb-card class="list-card mb-1">
-  <nb-card-body class="p-0">
-    <nb-list *ngIf="sensors.length > 0">
-      <nb-list-item *ngFor="let sensor of sensors">
-        <ngx-sensors-list-item [sensor]="sensor" (deleteSensor)="deleteSensor($event)"
-                               (editSensor)="openDialog(addSensorTemplateRef, $event)"></ngx-sensors-list-item>
-      </nb-list-item>
-    </nb-list>
-  </nb-card-body>
-</nb-card>
-<div *ngIf="false" class="accordion-container col-12 p-0">
-  <nb-accordion multi *ngIf="sensors.length > 0">
-    <nb-accordion-item class="w-100 shadow-sm border mb-2" *ngFor="let i of sensors">
-      <nb-accordion-item-header>
-        <button ghost
-                nbButton
-                [nbContextMenu]="[{ title: 'Profile' },{ title: 'Logout' },]"
-                (click)="$event.stopPropagation()"
-                status="primary">
-          <i class="fa fa-ellipsis-v"></i>
-        </button>
-        {{i.name}}
-      </nb-accordion-item-header>
-      <nb-accordion-item-body class="px-0">
-        <h6 class="text-muted p-0 m-0 border-bottom pb-2">Aerators</h6>
-        <nb-card hidden>
-          <nb-tabset>
-            <nb-tab tabTitle="Aerators">
-              <nb-list>
-                <nb-list-item class="shadow-sm border mb-2 w-100" *ngFor="let aerator of [1]">
-                  <div class="w-100">
-                    <p class="w-100 m-0 p-2 border-bottom font-weight-bold">Aerator - {{ aerator }}</p>
-                    <p class="w-100 m-0 p-0 mt-2">Motor : 2 HP Motor</p>
-                    <p class="w-100 m-0 p-0 mt-2">Auto On : <i class="fa fa-clock text-success"></i> Every Day at <code>09:00
-                      PM</code></p>
-                    <p class="w-100 m-0 p-0 mt-2">Auto Off : <i class="fa fa-clock text-danger"></i> Every Next Day
-                      <code>at 07:00 AM</code></p>
-                  </div>
-                </nb-list-item>
-              </nb-list>
-            </nb-tab>
-            <nb-tab tabTitle="Lights">
-              <nb-list>
-                <nb-list-item class="shadow-sm border mb-2 w-100" *ngFor="let aerator of [1]">
-                  <div class="w-100">
-                    <p class="w-100 m-0 p-2 border-bottom font-weight-bold">Aerator - {{ aerator }}</p>
-                    <p class="w-100 m-0 p-0 mt-2">Tube Lights : 50 Numbers</p>
-                    <p class="w-100 m-0 p-0 mt-2">Auto On : <i class="fa fa-clock text-success"></i> Every Day at <code>07:00
-                      PM</code></p>
-                    <p class="w-100 m-0 p-0 mt-2">Auto Off : <i class="fa fa-clock text-danger"></i> Every Next Day
-                      <code>at 06:00 AM</code></p>
-                  </div>
-                </nb-list-item>
-              </nb-list>
-            </nb-tab>
-            <nb-tab tabTitle="Feeding Machines">
-              <nb-list>
-                <nb-list-item class="shadow-sm border mb-2 w-100" *ngFor="let aerator of [1]">
-                  <div class="w-100">
-                    <p class="w-100 m-0 p-2 border-bottom font-weight-bold">Feeding Machine - {{ aerator }}</p>
-                    <p class="w-100 m-0 p-0 mt-2">Feeding Machine : Brand Name</p>
-                    <p class="w-100 m-0 p-0 mt-2">Auto On : <i class="fa fa-clock text-success"></i> Every Day at <code>12:00
-                      PM</code></p>
-                    <p class="w-100 m-0 p-0 pb-2 border-bottom">Auto Off : <i class="fa fa-clock text-danger"></i> Every
-                      Day at <code>01:00 PM</code></p>
-                    <p class="w-100 m-0 p-0 mt-2">Auto On : <i class="fa fa-clock text-success"></i> Every Day at <code>07:00
-                      PM</code></p>
-                    <p class="w-100 m-0 p-0 pb-2 border-bottom">Auto Off : <i class="fa fa-clock text-danger"></i> Every
-                      Day at <code>08:00 PM</code></p>
-                  </div>
-                </nb-list-item>
-              </nb-list>
-            </nb-tab>
-          </nb-tabset>
-        </nb-card>
-      </nb-accordion-item-body>
-    </nb-accordion-item>
-  </nb-accordion>
-  <h5 *ngIf="sensors.length == 0;" class="text-warning text-center">No Ponds to show</h5>
-</div>
 
-<a *ngIf="sensors.length != 0;" class="btn btn-link float-right" routerLink="/pages/manage-projects"><i
-  class="fa fa-caret-left mr-2"></i>Back to Manage Projects</a>
-<div *ngIf="sensors.length != 0;" class="clearfix"></div>
+<nb-accordion *ngIf="sensorTypes.length > 0" class="bg-transparent w-100">
+  <nb-accordion-item class="shadow-sm" *ngFor="let type of sensorTypes">
+    <nb-accordion-item-header>{{type.name}} Sensors</nb-accordion-item-header>
+    <nb-accordion-item-body>
+      <nb-list class="w-100 shadow">
+        <nb-list-item class="p-0" *ngFor="let sensor of sensorsGroupByTypes[type.id]">
+          <ngx-sensors-list-item [sensor]="sensor" (editSensor)="openDialog(addSensorTemplateRef, $event)"></ngx-sensors-list-item>
+        </nb-list-item>
+      </nb-list>
+    </nb-accordion-item-body>
+  </nb-accordion-item>
+</nb-accordion>
 
-<button (click)="openDialog(addSensorTemplateRef)"
-        class="btn shadow btn-primary ml-auto rounded-circle add-project-button">
+
+<button *ngIf="false" (click)="openDialog(addSensorTemplateRef)" class="btn shadow btn-primary ml-auto rounded-circle add-project-button">
   <i class="fa fa-plus"></i>
 </button>
 
@@ -111,6 +37,23 @@
         <div class="form-group">
           <label class="label">Sensor Name</label>
           <input name="name" [ngModel]="data?.name" autofocus type="text" nbInput fullWidth placeholder="Sensor Name">
+        </div>
+        <div class="form-group">
+          <label class="label">Sensor Table Name</label>
+          <input name="tableName" [ngModel]="data?.tableName"
+                 autofocus type="text" nbInput fullWidth placeholder="Sensor Table Name">
+        </div>
+        <div class="form-group">
+          <label class="label">Priority</label>
+          <input name="priority" [ngModel]="data?.priority"
+                 autofocus type="number" nbInput fullWidth placeholder="Priority">
+        </div>
+        <div class="form-group">
+          <label class="label">Sensor Type</label>
+          <nb-select name="type" [ngModel]="data?.type" fullWidth>
+            <nb-option value="" disabled>Select Sensor Type</nb-option>
+            <nb-option *ngFor="let sensorType of sensorTypes" [value]="sensorType.id">{{sensorType.name}}</nb-option>
+          </nb-select>
         </div>
         <div class="w-100 d-flex justify-content-between">
           <button type="submit" nbButton status="primary">
