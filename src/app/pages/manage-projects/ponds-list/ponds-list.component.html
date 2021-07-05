@@ -6,13 +6,11 @@
 <a class="btn btn-link float-right" routerLink="/pages/manage-projects"><i class="fa fa-caret-left mr-2"></i>Back to
   Manage Projects</a>
 <div class="clearfix"></div>
-<nb-card class="list-card">
+<nb-card class="list-card mb-1">
   <nb-card-body class="p-0">
     <nb-list *ngIf="ponds.length > 0">
       <nb-list-item *ngFor="let pond of ponds">
-        <ngx-ponds-list-item [pond]="pond"
-                             (deletePond)="deleteItem($event)"
-                             (editPond)="openDialog(addPondTemplateRef, $event)"></ngx-ponds-list-item>
+        <ngx-ponds-list-item [pond]="pond" (deletePond)="deleteItem($event)" (editPond)="openDialog(addPondTemplateRef, $event)"></ngx-ponds-list-item>
       </nb-list-item>
     </nb-list>
   </nb-card-body>
