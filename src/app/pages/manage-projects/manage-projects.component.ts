@@ -4,6 +4,7 @@ import {Observable, Subscription} from 'rxjs';
 import {BusyIndicatorService} from '../../services/busy-indicator/busy-indicator.service';
 import {NbDialogService} from '@nebular/theme';
 import {NgForm} from '@angular/forms';
+import firebase from 'firebase';
 
 export interface Project {
   id?: string;
@@ -29,7 +30,8 @@ export class ManageProjectsComponent {
     public busyIndicator: BusyIndicatorService,
   ) {
     this.projectsCollection = afs.collection<Project>('projects', ref => {
-      return ref.where('deleted', '==', false);
+      return ref.where('deleted', '==', false)
+        .orderBy('createdOn', 'desc');
     });
     this.projects$ = this.projectsCollection.valueChanges({idField: 'id'});
     const busyID = this.busyIndicator.show();
@@ -42,9 +44,19 @@ export class ManageProjectsComponent {
   async addItem(addProjectForm: NgForm, ref, project: Project = null) {
     const busyID = this.busyIndicator.show();
     if (project) {
-      await this.projectsCollection.doc(project.id).update(addProjectForm.value);
+      await this.projectsCollection.doc(project.id).update(
+        {
+          ...addProjectForm.value,
+          createdOn: firebase.firestore.Timestamp.now().seconds,
+          modifiedOn: firebase.firestore.Timestamp.now().seconds,
+        },
+      );
     } else {
-      await this.projectsCollection.add({...addProjectForm.value, deleted: false});
+      await this.projectsCollection.add({
+        ...addProjectForm.value, deleted: false,
+        createdOn: firebase.firestore.Timestamp.now().seconds,
+        modifiedOn: firebase.firestore.Timestamp.now().seconds,
+      });
     }
     addProjectForm.resetForm({});
     ref.close();
@@ -66,7 +78,8 @@ export class ManageProjectsComponent {
       dialog,
       {
         context: projectToEdit,
-        hasBackdrop: false,
+        hasBackdrop: true,
+        closeOnBackdropClick: false,
         autoFocus: true,
       });
   }

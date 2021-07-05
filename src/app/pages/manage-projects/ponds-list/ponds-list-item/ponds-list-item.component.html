@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-12 h6 mb-0">
+    <button ghost
+            nbButton
+            status="primary"
+            nbPopoverPlacement="right"
+            [nbPopoverContext]="pond"
+            [nbPopover]="actionsPopover">
+      <i class="fa fa-ellipsis-v"></i>
+    </button>
+    {{pond.name}}
+  </div>
+</div>
+
+<ng-template #actionsPopover let-data>
+  <nb-list>
+    <nb-list-item [routerLink]="'/pages/manage-sensors/'+pond.id" role="button" class="text-left" nbButton><div class="w-100"><i class="fa fa-list mr-2"></i>  Manage Sensors in  Pond</div></nb-list-item>
+    <nb-list-item (click)="deletePond.emit(data);popover.hide()" role="button" class="text-left" nbButton><div class="w-100"><i class="fa fa-trash mr-2"></i>  Delete Pond</div></nb-list-item>
+    <nb-list-item (click)="editPond.emit(data);popover.hide()" role="button" class="text-left" nbButton><div class="w-100"><i class="fa fa-edit mr-2"></i>  Edit Pond</div></nb-list-item>
+  </nb-list>
+</ng-template>

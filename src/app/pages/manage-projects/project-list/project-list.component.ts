@@ -8,6 +8,7 @@ import {NgForm} from '@angular/forms';
 
 export interface Pond {
   id?: string;
+  deleted?: boolean;
   name: string;
 }
 
@@ -53,7 +54,8 @@ export class ProjectListComponent {
       dialog,
       {
         context: project,
-        hasBackdrop: false,
+        hasBackdrop: true,
+        closeOnBackdropClick: false,
         autoFocus: true,
       });
   }
