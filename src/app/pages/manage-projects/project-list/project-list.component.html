@@ -1,22 +1,3 @@
-<!--<div class="accordion-container px-0 col-md-12 offset-lg-2 col-lg-8 offset-xxxl-4 col-xxxl-4">
-  <nb-accordion multi *ngIf="projects.length > 0">
-    <nb-accordion-item *ngFor="let i of projects">
-      <nb-accordion-item-header>
-        <h6 class="m-0 p-0">
-          {{i.name}}
-          <p class="m-0 p-0 mt-2">{{i.address}}</p>
-        </h6>
-      </nb-accordion-item-header>
-      <nb-accordion-item-body class="m-0 p-0">
-        <h6 class="text-muted">
-          <button (click)="openDialog(addPondTemplateRef, i)" class="btn btn-outline-primary float-right">Add Pond</button>
-        </h6>
-        <ngx-ponds-list [project]="i"></ngx-ponds-list>
-      </nb-accordion-item-body>
-    </nb-accordion-item>
-  </nb-accordion>
-  <h5 *ngIf="projects.length == 0;" class="text-warning text-center">No projects to show</h5>
-</div>-->
 <nb-card class="list-card">
   <nb-card-body class="p-0">
     <nb-list *ngIf="projects.length > 0">
@@ -24,6 +5,7 @@
         <ngx-project-list-item
           [project]="project"
           (deleteProject)="deleteProject.emit($event)"
+          (editProject)="editProject.emit($event)"
         ></ngx-project-list-item>
       </nb-list-item>
     </nb-list>

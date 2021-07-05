@@ -19,6 +19,7 @@ export interface Pond {
 export class ProjectListComponent {
   @Input() projects: Project[] = [];
   @Output() deleteProject: EventEmitter<Project> = new EventEmitter<Project>();
+  @Output() editProject: EventEmitter<Project> = new EventEmitter<Project>();
 
   private pondsCollection: AngularFirestoreCollection<Pond>;
   ponds$: Observable<Pond[]>;

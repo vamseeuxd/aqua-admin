@@ -10,6 +10,7 @@ import {NbPopoverDirective} from '@nebular/theme';
 export class ProjectListItemComponent implements OnInit {
   @Input() project: Project;
   @Output() deleteProject: EventEmitter<Project> = new EventEmitter<Project>();
+  @Output() editProject: EventEmitter<Project> = new EventEmitter<Project>();
   @ViewChild(NbPopoverDirective) popover: NbPopoverDirective;
 
   constructor() {

@@ -1,12 +1,12 @@
-<div class="row">
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active text-muted" aria-current="page">Manage Projects</li>
+  </ol>
+</nav>
 
-  <h6 class="text-muted d-flex justify-content-between col-12 mb-0 text-truncate border-bottom mb-2 pb-2">
-    Manage Projects
-  </h6>
-
-</div>
-
-<ngx-project-list (deleteProject)="deleteItem($event)" [projects]="projects"></ngx-project-list>
+<ngx-project-list (deleteProject)="deleteItem($event)"
+                  (editProject)="openDialog(addProjectTemplateRef, $event)"
+                  [projects]="projects"></ngx-project-list>
 
 
 <button (click)="openDialog(addProjectTemplateRef)" class="btn shadow btn-primary ml-auto rounded-circle add-project-button">
@@ -16,20 +16,22 @@
 
 <ng-template #addProjectTemplateRef let-data let-ref="dialogRef">
   <nb-card>
-    <nb-card-header>Add New Project</nb-card-header>
+    <nb-card-header *ngIf="!data">Add New Project</nb-card-header>
+    <nb-card-header *ngIf="data">Edit Project ({{data.name}})</nb-card-header>
     <nb-card-body>
-      <form #addProjectForm="ngForm" autocomplete="off" (submit)="addItem(addProjectForm, ref)">
+      <form #addProjectForm="ngForm" autocomplete="off" (submit)="addItem(addProjectForm, ref, data)">
         <div class="form-group">
           <label class="label">Project Name</label>
-          <input name="name" ngModel autofocus type="text" nbInput fullWidth placeholder="Project Name">
+          <input name="name" [ngModel]="data?.name" autofocus type="text" nbInput fullWidth placeholder="Project Name">
         </div>
         <div class="form-group">
           <label class="label">Address</label>
-          <textarea name="address" ngModel nbInput fullWidth placeholder="Address"></textarea>
+          <textarea name="address" [ngModel]="data?.address" nbInput fullWidth placeholder="Address"></textarea>
         </div>
-        <!--<button type="submit" nbButton status="danger">Add</button>-->
         <div class="w-100 d-flex justify-content-between">
-          <button type="submit" nbButton status="primary">Add</button>
+          <button type="submit" nbButton status="primary">
+            {{data ? 'Update' : 'Create'}}
+          </button>
           <button type="button" class="ml-2" (click)="addProjectForm.resetForm({});ref.close();" nbButton status="basic">
             Close
           </button>

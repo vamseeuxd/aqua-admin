@@ -39,9 +39,13 @@ export class ManageProjectsComponent {
     });
   }
 
-  async addItem(addProjectForm: NgForm, ref) {
+  async addItem(addProjectForm: NgForm, ref, project: Project = null) {
     const busyID = this.busyIndicator.show();
-    await this.projectsCollection.add({...addProjectForm.value, deleted: false});
+    if (project) {
+      await this.projectsCollection.doc(project.id).update(addProjectForm.value);
+    } else {
+      await this.projectsCollection.add({...addProjectForm.value, deleted: false});
+    }
     addProjectForm.resetForm({});
     ref.close();
     this.busyIndicator.hide(busyID);
@@ -57,11 +61,11 @@ export class ManageProjectsComponent {
     }
   }
 
-  openDialog(dialog: TemplateRef<any>) {
+  openDialog(dialog: TemplateRef<any>, projectToEdit: Project = null) {
     this.dialogService.open(
       dialog,
       {
-        context: 'this is some additional data passed to dialog',
+        context: projectToEdit,
         hasBackdrop: false,
         autoFocus: true,
       });
