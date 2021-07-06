@@ -2,7 +2,19 @@
   <nb-accordion-item class="w-100 m-0">
     <nb-accordion-item-header>{{sensor.name}}</nb-accordion-item-header>
     <nb-accordion-item-body>
-      <!--<pre>{{sensor|json}}</pre>-->
+      <ng-container *ngIf="!sensors || sensors.length == 0">
+        <h6 class="p-0 m-0">No {{sensor.name}} sensors are configured</h6>
+        <p class="p-0 m-0">
+          If you have installed  {{sensor.name}} sensor in Aqua-Pond, click on
+          <button (click)="openDialog(addSensorTemplateRef)" status="primary" ghost class="p-0 m-0 btn btn-link">Add</button>
+          to link sensor
+        </p>
+        <p class="p-0 m-0">
+          If you would like to order a new  {{sensor.name}} sensor, click on order
+          <button status="primary" ghost class="p-0 m-0 btn btn-link">Order</button>
+          to link sensor
+        </p>
+      </ng-container>
       <nb-list class="w-100 mb-4">
         <nb-list-item class="shadow-sm mb-2" *ngFor="let sen of sensors">
           <div class="w-100 d-flex flex-column">
@@ -10,25 +22,26 @@
             <p class="m-0">Warranty From : {{sen?.warrantyFrom|date:'MMMM-dd-yyyy'}}</p>
             <p class="m-0">Warranty To : {{sen?.warrantyTo|date:'MMMM-dd-yyyy'}}</p>
             <div class="w-100 d-flex flex-column flex-md-row">
-              <button size="small" (click)="deleteSensor(sen)" nbButton class="mb-1 mr-2 mt-2" status="danger"><nb-icon icon="trash"></nb-icon> Delete</button>
-              <button size="small" nbButton status="info" class="mb-1 mr-2 mt-2"><nb-icon icon="edit"></nb-icon> Edit</button>
-              <button size="small" (click)="createServiceRequest()" nbButton status="warning" class="mb-1 mr-2 mt-2"><nb-icon icon="question-mark-circle-outline"></nb-icon> Create a Service Request</button>
+              <button size="small" (click)="deleteSensor(sen)" nbButton class="mb-1 mr-2 mt-2" status="danger">
+                <nb-icon icon="trash"></nb-icon>
+                Delete
+              </button>
+              <button size="small" nbButton status="info" class="mb-1 mr-2 mt-2">
+                <nb-icon icon="edit"></nb-icon>
+                Edit
+              </button>
+              <button size="small" (click)="createServiceRequest()" nbButton status="warning" class="mb-1 mr-2 mt-2">
+                <nb-icon icon="question-mark-circle-outline"></nb-icon>
+                Create a Service Request
+              </button>
             </div>
           </div>
-
-          <!--<div class="ml-auto">
-            <button (click)="deleteSensor(sen)" nbButton class="mr-3" status="danger">
-              <nb-icon icon="trash"></nb-icon>
-            </button>
-            <button nbButton status="info">
-              <nb-icon icon="edit"></nb-icon>
-            </button>
-          </div>-->
         </nb-list-item>
       </nb-list>
-      <!--<pre>{{sensors|json}}</pre>-->
-      <button class="float-right mt-2 mr-2" (click)="openDialog(addSensorTemplateRef)" nbButton status="primary">Add New "{{sensor.name}}" Sensor</button>
-      <button class="float-right mt-2 mr-2" nbButton status="info">Order for "{{sensor.name}}" Sensor</button>
+
+      <button class="float-right mt-2 mr-2" (click)="openDialog(addSensorTemplateRef)" nbButton status="primary">Add
+      </button>
+      <button class="float-right mt-2 mr-2" nbButton status="info">Order</button>
       <div class="clearfix"></div>
     </nb-accordion-item-body>
   </nb-accordion-item>

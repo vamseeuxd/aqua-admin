@@ -33,8 +33,7 @@ export class SensorsListComponent implements OnInit {
     switchMap(pondID => {
       if (pondID) {
         return this.afs.collection<Sensor>('sensors', ref => {
-          return ref.where('pondId', '==', pondID)
-            .where('deleted', '==', false)
+          return ref.where('deleted', '==', false)
             .orderBy('priority', 'asc');
         }).valueChanges({idField: 'id'});
       } else {
@@ -95,8 +94,6 @@ export class SensorsListComponent implements OnInit {
           return rv;
         }, {});
       };
-      /*console.clear();
-      console.log(groupBy(value, 'type'));*/
       this.sensorsGroupByTypes = groupBy(value, 'type');
       this.busyIndicator.hide(busyID_0);
     });
@@ -140,6 +137,7 @@ export class SensorsListComponent implements OnInit {
     ref.close();
     this.busyIndicator.hide(busyID);
   }
+
 
   async deleteSensor(pond: Sensor) {
     if (pond.id) {
